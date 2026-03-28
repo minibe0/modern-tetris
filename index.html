@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Testris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particles-js"></div> <!-- Background particles -->
+    
+    <div class="game-wrapper">
+        <header class="game-header">
+            <h1 class="glow-text">NEON TESTRIS</h1>
+        </header>
+        
+        <main class="game-container panel-glass">
+            
+            <!-- Left Info Panel -->
+            <aside class="side-panel left-panel">
+                <div class="panel-section glass-box">
+                    <h2>HOLD</h2>
+                    <canvas id="hold-canvas" width="80" height="80"></canvas>
+                </div>
+                <div class="panel-section glass-box controls">
+                    <h3>CONTROLS</h3>
+                    <p><kbd>←</kbd> <kbd>→</kbd> Move</p>
+                    <p><kbd>↑</kbd> Rotate</p>
+                    <p><kbd>↓</kbd> Soft Drop</p>
+                    <p><kbd>Space</kbd> Hard Drop</p>
+                    <p><kbd>C</kbd> Hold</p>
+                </div>
+            </aside>
+
+            <!-- Center Game Area -->
+            <section class="board-area">
+                <div class="board-glass">
+                    <canvas id="tetris-canvas" width="300" height="600"></canvas>
+                </div>
+                <!-- Combo Notification container overlay -->
+                <div id="combo-alert" class="combo-text hidden">COMBO!</div>
+                <div id="game-over-screen" class="hidden glass-box game-over">
+                    <h2 class="glow-red">GAME OVER</h2>
+                    <p>SCORE: <span id="final-score">0</span></p>
+                    <button id="start-btn" class="glow-btn">PLAY AGAIN</button>
+                </div>
+            </section>
+
+            <!-- Right Info Panel -->
+            <aside class="side-panel right-panel">
+                <div class="panel-section glass-box stats">
+                    <div class="stat-item">
+                        <span>SCORE</span>
+                        <div id="score" class="digital-text">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <span>LEVEL</span>
+                        <div id="level" class="digital-text">1</div>
+                    </div>
+                    <div class="stat-item">
+                        <span>LINES</span>
+                        <div id="lines" class="digital-text">0</div>
+                    </div>
+                </div>
+
+                <div class="panel-section glass-box">
+                    <h2>NEXT</h2>
+                    <canvas id="next-canvas" width="80" height="80"></canvas>
+                </div>
+
+            </aside>
+            
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
