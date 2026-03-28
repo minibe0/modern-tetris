@@ -444,6 +444,7 @@ window.onload = function() {
         retina_detect: true
     });
 
-    // Start Screen
-    drawBoard();
+    // Auto-start the game
+    resetGame();
+    animate();
 };
